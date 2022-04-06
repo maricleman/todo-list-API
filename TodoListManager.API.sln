@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListManager.API", "TodoListManager.API\TodoListManager.API.csproj", "{3D153161-C840-40E6-A022-F0BB1904D364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{09F64A19-45DC-475D-9EF1-CA58555E6CE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{77151ACE-E33C-464D-9CA0-B3B5525F055C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{44C30967-EF37-4F51-BF68-C1FBD30FA38D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Models", "00 Models", "{983992DF-87F1-4F05-AF71-9A37D269E9BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Data Layer", "20 Data Layer", "{D420F24F-0C4A-466C-A446-9345156A45C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Business Logic", "40 Business Logic", "{910A4B22-03FF-46AB-9DDA-E836463D0909}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "60 API", "60 API", "{E2F89C10-0192-4772-BE12-27ACFF986EA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D153161-C840-40E6-A022-F0BB1904D364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D153161-C840-40E6-A022-F0BB1904D364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D153161-C840-40E6-A022-F0BB1904D364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D153161-C840-40E6-A022-F0BB1904D364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F64A19-45DC-475D-9EF1-CA58555E6CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F64A19-45DC-475D-9EF1-CA58555E6CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F64A19-45DC-475D-9EF1-CA58555E6CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F64A19-45DC-475D-9EF1-CA58555E6CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77151ACE-E33C-464D-9CA0-B3B5525F055C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77151ACE-E33C-464D-9CA0-B3B5525F055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77151ACE-E33C-464D-9CA0-B3B5525F055C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77151ACE-E33C-464D-9CA0-B3B5525F055C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44C30967-EF37-4F51-BF68-C1FBD30FA38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C30967-EF37-4F51-BF68-C1FBD30FA38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C30967-EF37-4F51-BF68-C1FBD30FA38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C30967-EF37-4F51-BF68-C1FBD30FA38D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D153161-C840-40E6-A022-F0BB1904D364} = {E2F89C10-0192-4772-BE12-27ACFF986EA3}
+		{09F64A19-45DC-475D-9EF1-CA58555E6CE8} = {910A4B22-03FF-46AB-9DDA-E836463D0909}
+		{77151ACE-E33C-464D-9CA0-B3B5525F055C} = {D420F24F-0C4A-466C-A446-9345156A45C5}
+		{44C30967-EF37-4F51-BF68-C1FBD30FA38D} = {983992DF-87F1-4F05-AF71-9A37D269E9BC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA3F0F18-496F-4115-894A-01477C4A847E}
+	EndGlobalSection
+EndGlobal
