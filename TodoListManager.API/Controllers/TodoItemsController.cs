@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Models.DTOs;
 using Models.EntityModels;
@@ -18,6 +19,7 @@ namespace TodoListManager.API.Controllers
     /// https://gowthamcbe.com/2021/07/18/azure-table-storage-with-asp-net-core-web-api/
     /// </summary>
     [Route("api/[controller]")]
+    [ApiController]
     public class TodoItemsController : ControllerBase
     {
         private readonly ITodoListManager todoListManager;
@@ -27,8 +29,14 @@ namespace TodoListManager.API.Controllers
             this.todoListManager = todoListManager;
         }
 
+        /// <summary>
+        /// Retrieve the user's todo list
+        /// and associated profile info given the
+        /// ActiveDirectoryId
+        /// </summary>
+        /// <param name="ActiveDirectoryId"></param>
+        /// <returns></returns>
         [HttpGet]
-        [ActionName(nameof(RetrieveTodoListItem))]
         public IActionResult RetrieveTodoListItem([FromQuery] string ActiveDirectoryId)
         {
             try

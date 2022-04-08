@@ -16,12 +16,13 @@ namespace Models
         {
             var todoListEntity = new TodoListEntity
             {
-                ActiveDirectoryId = userInfo.UserActiveDirectoryID,
-                Email = userInfo.Email,
-                DisplayName = userInfo.UserDisplayName,
-                ListOfTodoItems = JsonConvert.SerializeObject(userInfo.ListOfTodoItems),
-                RowKey = userInfo.UserActiveDirectoryID,
-                PartitionKey = "1"
+                ActiveDirectoryId = userInfo.user_active_directory_id,
+                Email = userInfo.email,
+                DisplayName = userInfo.user_display_name,
+                ListOfTodoItems = JsonConvert.SerializeObject(userInfo.list_of_todo_items),
+                RowKey = userInfo.user_active_directory_id,
+                PartitionKey = "1",
+                Timestamp = DateTime.UtcNow
             };
             return todoListEntity;
         }
@@ -30,10 +31,10 @@ namespace Models
         {
             var userInfo = new UserInfoDTO
             {
-                UserActiveDirectoryID = todoListEntity.ActiveDirectoryId,
-                Email = todoListEntity.Email,
-                UserDisplayName = todoListEntity.DisplayName,
-                ListOfTodoItems = JsonConvert.DeserializeObject<List<TodoItemDTO>>(todoListEntity.ListOfTodoItems)
+                user_active_directory_id = todoListEntity.ActiveDirectoryId,
+                email = todoListEntity.Email,
+                user_display_name = todoListEntity.DisplayName,
+                list_of_todo_items = JsonConvert.DeserializeObject<List<TodoItemDTO>>(todoListEntity.ListOfTodoItems)
             };
             return userInfo;
         }

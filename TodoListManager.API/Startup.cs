@@ -21,6 +21,7 @@ namespace TodoListManager.API
 {
     public class Startup
     {
+        private readonly string _allowLocalOrigins = "AllowLocalOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +35,16 @@ namespace TodoListManager.API
             services.AddScoped<IDbRepository, DbRepository>();
             services.AddScoped<ITodoListManager, BusinessLogic.TodoListManager>();
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: _allowLocalOrigins,
+                    policy =>
+                    {
+                        policy.AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .WithOrigins("http://localhost:3000");
+                    });
+            });
 
             var connectionStrings = new ConnectionStrings();
             Configuration.Bind("ConnectionStrings", connectionStrings);
@@ -86,6 +97,17 @@ namespace TodoListManager.API
 
             app.UseRouting();
 
+            /**
+             * Thanks to the following article for helping me
+             * set up disabling cors policies locally.
+             * 
+             * https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1
+             */
+            if (env.IsDevelopment())
+            {
+                app.UseCors(_allowLocalOrigins);
+            }
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
