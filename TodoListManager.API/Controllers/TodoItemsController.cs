@@ -47,9 +47,9 @@ namespace TodoListManager.API.Controllers
                 var validUrls = new List<string>
                 {
                     "http://localhost:3000/",
-                    "https://maricle-todo-list.com",
-                    "https://www.maricle-todo-list.com",
-                    "https://maricle-todo-list.azurewebsites.net"
+                    "https://maricle-todo-list.com/",
+                    "https://www.maricle-todo-list.com/",
+                    "https://maricle-todo-list.azurewebsites.net/"
                 };
 
                 var referer = HttpContext.Request.Headers["Referer"];
@@ -88,9 +88,9 @@ namespace TodoListManager.API.Controllers
                 var validUrls = new List<string>
                 {
                     "http://localhost:3000/",
-                    "https://maricle-todo-list.com",
-                    "https://www.maricle-todo-list.com",
-                    "https://maricle-todo-list.azurewebsites.net"
+                    "https://maricle-todo-list.com/",
+                    "https://www.maricle-todo-list.com/",
+                    "https://maricle-todo-list.azurewebsites.net/"
                 };
 
                 var referer = HttpContext.Request.Headers["Referer"];
