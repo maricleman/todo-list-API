@@ -70,9 +70,6 @@ namespace DataLayer
                 var query = new TableQuery<TodoListEntity>();
                 var lst = table.ExecuteQuery(query);
                 return lst.FirstOrDefault();
-
-                //var insertOrMergeOperation = TableOperation.InsertOrMerge(entity);
-                //return await ExecuteTableOperation(insertOrMergeOperation) as TodoListEntity;
             }
             catch (Exception ex)
             {

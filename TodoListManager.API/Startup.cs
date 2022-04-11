@@ -50,6 +50,7 @@ namespace TodoListManager.API
             Configuration.Bind("ConnectionStrings", connectionStrings);
             services.AddSingleton(connectionStrings);
 
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -114,8 +115,6 @@ namespace TodoListManager.API
             {
                 endpoints.MapControllers();
             });
-
-
         }
     }
 }

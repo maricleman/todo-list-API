@@ -41,8 +41,27 @@ namespace TodoListManager.API.Controllers
         {
             try
             {
-                var results = todoListManager.RetrieveTodoListItem(ActiveDirectoryId);
-                return Ok(results);
+                /**
+                 * Terribly bad security...very bad...
+                 */
+                var validUrls = new List<string>
+                {
+                    "http://localhost:3000/",
+                    "https://maricle-todo-list.com",
+                    "https://www.maricle-todo-list.com",
+                    "https://maricle-todo-list.azurewebsites.net"
+                };
+
+                var referer = HttpContext.Request.Headers["Referer"];
+                if (!validUrls.Contains(referer))
+                {
+                    return Unauthorized();
+                }
+                else
+                {
+                    var results = todoListManager.RetrieveTodoListItem(ActiveDirectoryId);
+                    return Ok(results);
+                }
             }
             catch (Exception ex)
             {
@@ -63,15 +82,34 @@ namespace TodoListManager.API.Controllers
         {
             try
             {
-                var results = todoListManager.InsertOrModifyUsersTodoItems(userInfo);
-                if (results.HttpStatusCode == 204)
+                /**
+                 * Terribly bad security...very bad...
+                 */
+                var validUrls = new List<string>
                 {
-                    return Ok(results.Etag);
-                } else
+                    "http://localhost:3000/",
+                    "https://maricle-todo-list.com",
+                    "https://www.maricle-todo-list.com",
+                    "https://maricle-todo-list.azurewebsites.net"
+                };
+
+                var referer = HttpContext.Request.Headers["Referer"];
+                if (!validUrls.Contains(referer))
                 {
-                    return BadRequest(results.Result);
+                    return Unauthorized();
                 }
-                
+                else
+                {
+                    var results = todoListManager.InsertOrModifyUsersTodoItems(userInfo);
+                    if (results.HttpStatusCode == 204)
+                    {
+                        return Ok(results.Etag);
+                    }
+                    else
+                    {
+                        return BadRequest(results.Result);
+                    }
+                }
             }
             catch (Exception ex)
             {
