@@ -13,5 +13,7 @@ namespace Models.DTOs
         public string id { get; set; }
         [JsonProperty("title")]
         public string title { get; set; }
+        [JsonProperty("is_checked")]
+        public bool is_checked { get; set; }
     }
 }
