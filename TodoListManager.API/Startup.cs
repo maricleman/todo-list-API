@@ -59,12 +59,12 @@ namespace TodoListManager.API
                     Version = "v1",
                     Title = "ToDo API",
                     Description = "A simple ASP.NET Core Web API to store a user's todo list.",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Documentation",
-                        Email = string.Empty,
-                        Url = new Uri("https://abbott.sharepoint.com/teams/US-ARDx-SCRit/dev/_layouts/15/Doc.aspx?sourcedoc={2389408b-2d7b-458a-9984-ad790ad78bed}&action=edit&wd=target%28How-Tos.one%7C29897118-af4f-4473-acf7-074198eac632%2FUse%20the%20On-Prem%20Key%20Vault%20in%20your%20Application%7Cf4a3c6f4-30c5-4ce9-b4b9-6def35d43be8%2F%29"),
-                    },
+                    //Contact = new OpenApiContact
+                    //{
+                    //    Name = "Documentation",
+                    //    Email = string.Empty,
+                    //    Url = new Uri("https://abbott.sharepoint.com/teams/US-ARDx-SCRit/dev/_layouts/15/Doc.aspx?sourcedoc={2389408b-2d7b-458a-9984-ad790ad78bed}&action=edit&wd=target%28How-Tos.one%7C29897118-af4f-4473-acf7-074198eac632%2FUse%20the%20On-Prem%20Key%20Vault%20in%20your%20Application%7Cf4a3c6f4-30c5-4ce9-b4b9-6def35d43be8%2F%29"),
+                    //},
                 });
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
