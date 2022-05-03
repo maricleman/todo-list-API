@@ -9,6 +9,7 @@ on:
       - main
   workflow_dispatch:
 
+
 jobs:
   build:
     runs-on: windows-latest
@@ -51,7 +52,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'maricle-todo-list-api'
+          app-name: 'app-todoappapi-prod-centralus'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F389B01D5AA14D0BAD64583CB969AB6D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: .
